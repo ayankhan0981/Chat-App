@@ -1,0 +1,210 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and overall layout */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #eaeaea; /* Light text for contrast */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+}
+
+/* Chat container */
+.chat-container {
+    display: flex;
+    height: 80vh;
+    width: 700px; /* Shorter width for the chat container */
+    background-color: #1e1e1e; /* Dark background for the chat container */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Sidebar (user list) */
+.sidebar {
+    width: 250px; /* Smaller sidebar */
+    background-color: #2a2a2a; /* Darker background for sidebar */
+    padding: 20px;
+    border-right: 1px solid #444;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar div {
+    padding: 15px;
+    background-color: #3c3c3c;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sidebar div:hover {
+    background-color: #8b0000; /* Dark red on hover */
+    color: #fff;
+}
+
+/* Chat box layout */
+.chat-box {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+}
+
+#chat_messages {
+    flex-grow: 1;
+    margin-bottom: 20px;
+    overflow-y: auto;
+}
+
+/* Message styles */
+#chat_messages p {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 8px;
+    background-color: #3e3e3e; /* Darker background for messages */
+    max-width: 80%; /* Limit the width of messages */
+    color: #eaeaea; /* Light text color for messages */
+}
+
+#chat_messages .message-sent {
+    background-color: #8b0000; /* Blood red for sent messages */
+    align-self: flex-end; /* Align sent messages to the right */
+    margin-left: auto; /* Push sent messages to the right */
+}
+
+#chat_messages .message-received {
+    background-color: #1f1f1f; /* Very dark background for received messages */
+    align-self: flex-start; /* Align received messages to the left */
+    margin-right: auto; /* Push received messages to the left */
+}
+
+/* Input area */
+#chat_input {
+    padding: 12px;
+    border: 1px solid #444; /* Dark border */
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%;
+    background-color: #2a2a2a; /* Dark input box */
+    color: #eaeaea; /* Light text */
+    margin-bottom: 10px;
+}
+
+/* Buttons */
+button {
+    padding: 12px;
+    background-color: #444; /* Dark button */
+    color: #eaeaea; /* Light text */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 20%; /* Reduced width to 20% */
+}
+
+button:hover {
+    background-color: #8b0000; /* Dark red on hover */
+}
+
+/* Logout Button in the top-right corner */
+.logout-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 6px 12px;
+    background-color: #ff3333; /* Dark red for the logout button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 50%; /* Decreased width */
+}
+
+.logout-btn:hover {
+    background-color: #8b0000; /* Dark red on hover */
+}
+
+/* Form container for login and registration */
+.form-container {
+    width: 100%;
+    max-width: 400px;
+    background-color: #1e1e1e; /* Dark background for form container */
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #444; /* Dark border */
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #2a2a2a; /* Dark background for input */
+    color: #eaeaea; /* Light text */
+}
+
+.form-container button {
+    width: 25%;
+    padding: 12px;
+    background-color: #444;
+    color: #eaeaea;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #8b0000; /* Dark red on hover */
+}
+
+.form-container p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #eaeaea; /* Light text color for form paragraph */
+}
+
+/* Responsiveness for mobile devices */
+@media (max-width: 768px) {
+    .chat-container {
+        flex-direction: column;
+        height: 100vh;
+        width: 100%; /* Full width on small screens */
+    }
+
+    .sidebar {
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        padding: 10px;
+    }
+
+    .chat-box {
+        height: 100%;
+        width: 100%;
+    }
+
+    /* Adjust the button width for mobile devices */
+    button, .form-container button {
+        width: 80%; /* On mobile, buttons take up more width */
+    }
+}
